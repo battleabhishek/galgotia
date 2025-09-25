@@ -1,0 +1,76 @@
+import math
+
+# Basic arithmetic functions
+print(f"Absolute value of -10: {abs(-10)}")
+print(f"Sum of elements in a list: {sum([1, 2, 3, 4])}")
+print(f"Maximum of 5, 10, 3: {max(5, 10, 3)}")
+print(f"Minimum of 5, 10, 3: {min(5, 10, 3)}")
+print(f"Round 3.14159 to nearest integer: {round(3.14159)}")
+print(f"Round 3.14159 to 2 decimal places: {round(3.14159, 2)}")
+
+# Math module functions
+print(f"Square root of 25: {math.sqrt(25)}")
+print(f"Ceiling of 3.2: {math.ceil(3.2)}")
+print(f"Floor of 3.8: {math.floor(3.8)}")
+print(f"Factorial of 5: {math.factorial(5)}")
+print(f"Value of pi: {math.pi}")
+print(f"Value of e: {math.e}")
+print(f"Sine of 0: {math.sin(0)}")
+print(f"Cosine of 0: {math.cos(0)}")
+print(f"Tangent of 0: {math.tan(0)}")
+print(f"Power of 2 raised to 3: {math.pow(2, 3)}")
+print(f"Logarithm of 10 (base e): {math.log(10)}")
+print(f"Logarithm of 10 (base 10): {math.log10(10)}")
+
+#list maths functions
+lst=[1,2,3,4,5]
+print(f"Sum of list elements: {sum(lst)}")
+print(f"Maximum element in list: {max(lst)}")
+print(f"Minimum element in list: {min(lst)}")
+print(f"Length of list: {len(lst)}")
+print(f"Sorted list: {sorted(lst)}")
+print(f"Reversed list: {list(reversed(lst))}")
+print(f"All elements are positive: {all(x>0 for x in lst)}")
+print(f"Any element is greater than 3: {any(x>3 for x in lst)}")
+print(f"List after applying map (square each element): {list(map(lambda x:x**2,lst))}")
+print(f"List after applying filter (even elements): {list(filter(lambda x:x%2==0,lst))}")
+print(f"List after applying reduce (sum of elements): {__import__('functools').reduce(lambda x,y:x+y,lst)}")
+print(f"List comprehension (double each element): {[x*2 for x in lst]}")
+print(f"List comprehension with condition (double if even, triple if odd): {[x*2 if x%2==0 else x*3 for x in lst]}")
+print(f"Nested function (doubler): {(lambda n: (lambda x: x*n))(2)(5)}")
+print(f"Nested function (tripler): {(lambda n: (lambda x: x*n))(3)(5)}")
+print(f"Class with lambda (Person age after birthday): { (lambda name, age: (type('Person', (), {'name': name, 'age': age, 'birthday': lambda self: setattr(self, 'age', self.age + 1)})()))('John', 25).birthday() or (lambda p: f'Name: {p.name}, Age: {p.age}')(type('Person', (), {'name': 'John', 'age': 26})()) }")
+print(f"Exception handling with lambda (divide): {(lambda a, b: (lambda x, y: x/y if y != 0 else 'Error: Division by zero')(a, b))(10, 2)}")
+print(f"Exception handling with lambda (divide by zero): {(lambda a, b: (lambda x, y: x/y if y != 0 else 'Error: Division by zero')(a, b))(10, 0)}")
+print(f"Recursion with lambda (factorial of 5): {(lambda f: (lambda x: 1 if x == 0 else x * f(f)(x - 1))(5))(lambda f: (lambda x: 1 if x == 0 else x * f(f)(x - 1)))}")
+
+#using lambda function with math functions
+print(f"Square root of 16 using lambda: {(lambda x: math.sqrt(x))(16)}")
+print(f"Ceiling of 4.3 using lambda: {(lambda x: math.ceil(x))(4.3)}")
+print(f"Floor of 4.7 using lambda: {(lambda x: math.floor(x))(4.7)}")
+print(f"Factorial of 6 using lambda: {(lambda x: math.factorial(x))(6)}")
+print(f"Sine of pi/2 using lambda: {(lambda x: math.sin(x))(math.pi/2)}")
+print(f"Cosine of pi using lambda: {(lambda x: math.cos(x))(math.pi)}")
+print(f"Tangent of pi/4 using lambda: {(lambda x: math.tan(x))(math.pi/4)}")
+print(f"Power of 3 raised to 4 using lambda: {(lambda x, y: math.pow(x, y))(3, 4)}")
+print(f"Logarithm of 20 (base e) using lambda: {(lambda x: math.log(x))(20)}")
+print(f"Logarithm of 100 (base 10) using lambda: {(lambda x: math.log10(x))(100)}")
+
+#using lambda function with list maths functions
+lst=[1,2,3,4,5]
+print(f"Sum of list elements using lambda: {(lambda lst: sum(lst))(lst)}")
+print(f"Maximum element in list using lambda: {(lambda lst: max(lst))(lst)}")
+print(f"Minimum element in list using lambda: {(lambda lst: min(lst))(lst)}")
+print(f"Length of list using lambda: {(lambda lst: len(lst))(lst)}")
+print(f"Sorted list using lambda: {(lambda lst: sorted(lst))(lst)}")
+print(f"Reversed list using lambda: {(lambda lst: list(reversed(lst)))(lst)}")
+print(f"All elements are positive using lambda: {(lambda lst: all(x>0 for x in lst))(lst)}")
+print(f"Any element is greater than 3 using lambda: {(lambda lst: any(x>3 for x in lst))(lst)}")
+print(f"List after applying map (square each element) using lambda: {(lambda lst: list(map(lambda x:x**2,lst)))(lst)}")
+print(f"List after applying filter (even elements) using lambda: {(lambda lst: list(filter(lambda x:x%2==0,lst)))(lst)}")
+print(f"List after applying reduce (sum of elements) using lambda: {(lambda lst: __import__('functools').reduce(lambda x,y:x+y,lst))(lst)}")
+print(f"List comprehension (double each element) using lambda: {(lambda lst: [x*2 for x in lst])(lst)}")
+print(f"List comprehension with condition (double if even, triple if odd) using lambda: {(lambda lst: [x*2 if x%2==0 else x*3 for x in lst])(lst)}")
+print(f"Nested function (doubler) using lambda: {(lambda n: (lambda x: x*n))(2)(5)}")
+print(f"Nested function (tripler) using lambda: {(lambda n: (lambda x: x*n))(3)(5)}")
+
